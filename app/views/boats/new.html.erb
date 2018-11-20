@@ -1,0 +1,9 @@
+<%= form_for Boat.new do |f| %>
+	<div class='new-blog-title'><%= f.text_field :boat_name, placeholder: "Boat name", :class => "new-blog-title-field" %></div>
+	<div class='new-blog-title'><%= f.text_field :container_capacity, placeholder: "How many containers fit on this mothafuckin ship?!", :class => "new-blog-title-field" %></div>
+	<div class='new-blog-title'><%= f.text_field :port_of_origin, placeholder: "What is this boat's port of orgin?", :class => "new-blog-title-field" %></div>
+	<div class='new-blog-title'><%= f.hidden_field :user_id, :value => current_user.id, :class => "new-blog-title-field" %></div>
+		
+	<%= f.submit :class =>'post-btn'%>
+	<% end %>
+	</div>
