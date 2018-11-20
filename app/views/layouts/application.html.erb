@@ -25,6 +25,11 @@
     <%if user_signed_in?%>
     logged in as: <%=current_user.email%>
     <%end%>
+    <div class='header-container'>
+    <h1>Welcome to our Shipping Company!</h1>
+    <h3>If you are an employee, please sign in to access your account</h3>
+    <div class='homepage-image'></div>
+    </div>
     <%= yield %>
   </body>
 </html>
