@@ -1,0 +1,7 @@
+<div>
+<% @boats.each do |u|%>
+ <div> Boat Name: <%= u.boat_name%></div>
+  <div>Container capacity: <%= u.container_capacity %></div>
+  <div>Boat owner: <%= u.user_id %></div><br>
+<%end%>
+</div>
