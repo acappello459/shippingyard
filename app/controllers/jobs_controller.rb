@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
 
+
   def index
     @jobs = Job.all
   end
@@ -12,6 +13,8 @@ def create
     redirect_to "/jobs"
   end
 end
+
+
 
 
 
