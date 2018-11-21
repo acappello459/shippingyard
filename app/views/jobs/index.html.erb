@@ -1,2 +1,6 @@
-<h1>Wanna see who is a bitch?</h1>
-<h3><li><%= link_to "Check it out here!", boats_path %></li></h3>
+<h1>Hello User (Email): <%= current_user.email %></h1>
+<h2>All current jobs</h2>
+
+<% @jobs.each do |j| %>
+<div><%= j.job_description %></div>
+<% end %>
