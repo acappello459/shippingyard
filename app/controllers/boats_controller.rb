@@ -24,7 +24,7 @@ def create
 end
 
 def show
-	@boats = Boat.all
+	@boat = Boat.find(params[:id])
 	current_user
 end
 
