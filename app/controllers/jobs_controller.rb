@@ -14,7 +14,10 @@ def create
   end
 end
 
-
+def show
+  @jobs = Job.find(params[:id])
+  @boats = Boat.all
+end
 
 
 

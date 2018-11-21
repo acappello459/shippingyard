@@ -1,12 +1,13 @@
 <%= link_to "Create a new boat", new_boat_path %>
 <br>
-
+<br><br>
 <div>
 <% @boats.reverse.each do |u|%>
+<div><a href = '/boats/<%=u.id%>'>Go to Boat Page</a></div>
  <div> Boat Name: <%= u.boat_name%></div>
   <div>Container capacity: <%= u.container_capacity %></div>
   <div>Port of origin: <%= u.port_of_origin %></div>
   <div>Employee: <%= u.user.email %></div><br>
+  
 <%end%>
 </div>
-
