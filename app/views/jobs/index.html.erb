@@ -1,6 +1,12 @@
-<h1>Hello User (Email): <%= current_user.email %></h1>
+<h1>Hello Employee: <%= current_user.email %></h1>
 <h2>All current jobs</h2>
-
 <% @jobs.each do |j| %>
-<div><%= j.job_description %></div>
+<div><strong>Description:</strong> <%= j.job_description %></div>
+<div><strong>Origin:</strong> <%= j.job_origin %></div>
+<div><strong>Destination:</strong> <%= j.job_destination %></div>
+<div><%= j.containers_needed%></div>
+<!-- <div> <%#= link_to "Assign to boat", jobs_show_path %> </div> -->
+<div> <a href="/jobs/<%=j.id%>">Assign to boat</a> </div>
+<!-- <a href="/blogs/ <%#= b.id %>" -->
+<br>
 <% end %>
