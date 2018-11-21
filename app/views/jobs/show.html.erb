@@ -1,0 +1,15 @@
+<h1>hello</h1>
+
+<div><%= @jobs.job_description %></div>
+
+<% @boats.each do |boat| %>
+<%= form_for :boat, url: {action: "assign", controller: 'boats'}, html:{method: "post"} do |f| %>
+	<%= hidden_field_tag "job_id", @jobs.id %>
+	<%= hidden_field_tag "boat_id", boat.id %>
+	<div>Boat ID: <%= boat.id %> & Boat Capacity <%= boat.container_capacity %></div>
+	
+	<%= f.submit "Assign Boat" %>
+	<% end %>
+<% end %>
+
+
