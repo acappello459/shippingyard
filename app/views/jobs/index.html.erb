@@ -1,5 +1,9 @@
 <h1>Hello Employee: <%= current_user.email %></h1>
 <h2>All current jobs</h2>
+
+
+<%= link_to "New job", new_job_path %>
+
 <% @jobs.each do |j| %>
 <div><strong>Description:</strong> <%= j.job_description %></div>
 <div><strong>Origin:</strong> <%= j.job_origin %></div>
