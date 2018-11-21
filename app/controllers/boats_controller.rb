@@ -11,14 +11,14 @@ def create
 	if boat.save
 		redirect_to "/boats"
 	end
-end 
+end
 
 def show
 	@boats = Boat.all
 	current_user
 end
 
-private 
+private
 def boat_params
 	params.require(:boat).permit(:boat_name, :container_capacity, :port_of_origin, :user_id)
 end

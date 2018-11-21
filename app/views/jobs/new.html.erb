@@ -1,0 +1,10 @@
+<%= form_for Job.new do |f| %>
+	<div class='new-job'><%= f.text_field :job_description, placeholder: "Job Description", :class => "new-job-field" %></div>
+	<div class='new-job'><%= f.text_field :containers_needed, placeholder: "How many containers do you need to complete this job", :class => "new-job-field" %></div>
+	<div class='new-job'><%= f.text_field :job_origin, placeholder: "Where is this Job's point of origin", :class => "new-job-field" %></div>
+	<div class='new-job'><%= f.text_field :job_destination, placeholder: "Where do theses containers have to be delivered", :class => "new-job-field" %></div>
+	<div class='new-job'><%= f.text_field :job_cost, placeholder: "How much will this job cost?", :class => "new-job-field" %></div>
+
+	<%= f.submit :class =>'post-btn'%>
+	<% end %>
+	</div>
