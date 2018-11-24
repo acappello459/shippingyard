@@ -1,0 +1,19 @@
+<%= form_for @job do |f|  %>
+
+	<h6>Job Description</h6> 
+	<div><%= f.text_area :job_description %><div>
+
+	<h6>Job Origin</h6> 
+	<div><%= f.text_field :job_origin %><div>
+	
+	<h6>Job Destination</h6>
+	<div><%= f.text_field :job_destination %><div>
+
+	<h6>Job Cost</h6>
+	<div><%= f.text_field :job_cost %><div>
+
+	<h6>Containers Needed</h6>
+	<div><%= f.text_field :containers_needed %><div>
+
+	<%= f.submit %>
+<% end %>

@@ -1,12 +1,15 @@
-<h1>hello</h1>
+<h1>What would you like to do with this shipping job?</h1>
+
+<%= link_to "Update Current Job", edit_job_path %>
+<%= link_to "Delete Current Job", job_path, method: :delete %>
 
 <div><%= @jobs.job_description %></div>
 
 <% @boats.each do |boat| %>
-<%= form_for :boat, url: {action: "assign", controller: 'boats'}, html:{method: "post"} do |f| %>
-	<%= hidden_field_tag "job_id", @jobs.id %>
-	<%= hidden_field_tag "boat_id", boat.id %>
-	<div>Boat ID: <%= boat.id %> & Boat Capacity <%= boat.container_capacity %></div>
+	<%= form_for :boat, url: {action: "assign", controller: 'boats'}, html:{method: "post"} do |f| %>
+		<%= hidden_field_tag "job_id", @jobs.id %>
+		<%= hidden_field_tag "boat_id", boat.id %>
+	<h4>Boat name: <%= boat.boat_name %> & Boat Capacity <%= boat.container_capacity %></h4>
 	
 	<%= f.submit "Assign Boat" %>
 	<% end %>

@@ -1,7 +1,21 @@
 <div>
 
- <div> Boat Name: <%= @boat.boat_name%></div>
-  <div>Container capacity: <%= @boat.container_capacity %></div>
-  <div>Boat owner: <%= @boat.user.email %></div><br>
-
+	<h2>Boat Name: <%= @boat.boat_name%></h2>
+	<h4>Container capacity: <%= @boat.container_capacity %></h4>
+	<h4>Boat owner: <%= @boat.user.email %></h4>
+	<div><%= link_to "Edit Boat", edit_boat_path %></div>
+	<div><%= link_to "Delete Boat", boat_path, method: :delete %></div>
+	
+	<hr>
+	
+	<h2>Jobs associated with this boat:</h2>
+	<% totalContainers = 0 %>
+	<% @boat.jobs.each do |j| %>
+		<% totalContainers += j.containers_needed %>
+		<ul>
+			<li>Job Description: <%= j.job_description %></li>
+			<li>Job load:<%= j.containers_needed %></li>
+		</ul>
+	<% end %>
+	<p>The total amount of containers assigned to <%= @boat.boat_name%> is <%= totalContainers %> containers.</p>
 </div>
