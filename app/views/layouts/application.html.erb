@@ -9,28 +9,35 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <nav>
-    <%if user_signed_in?%>
     <ul>
-
-      <li><%= link_to "Ships", boats_path %></li>
-      <li><%= link_to "Jobs", jobs_path %></li>
-      <li>Destinations</li>
-      <li><%=link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
-    <%else%>
-      <li><%=link_to "Sign in", new_user_session_path%></li>
-  </ul>
-  <%end%>
+      <%if user_signed_in? %>
+        <li><%= link_to "Ships", boats_path %></li>
+        <li><%= link_to "Jobs", jobs_path %></li>
+        <!-- <li>Destinations</li> -->
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+      <% end %>
+    </ul>
   </nav>
 
   <body>
-    <%if user_signed_in?%>
-    logged in as: <%=current_user.email%>
+    <%if user_signed_in? %>
+      <h3>logged in as: <%= current_user.email %></h3>
     <%end%>
+
     <div class='header-container'>
-    <h1>Welcome to our Shipping Company!</h1>
-    <h3>If you are an employee, please sign in to access your account</h3>
-    <div class='homepage-image'></div>
+      <h1>Welcome to our Shipping Company!</h1>
+      <% if user_signed_in? %>
+        <h3>Hello <%= current_user.email.split("@")[0].capitalize %>!</h3>
+      <% else %>
+        <h3>If you are an employee, please sign in to access your account</h3>
+      <% end %> 
+      <div class='homepage-image'></div>
     </div>
+
     <%= yield %>
   </body>
 </html>
+  
